@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the Node structure
 typedef struct Node {
   int data;
   struct Node *next;
 } Node;
 
-// Function to create a new node
 Node *createNode(int data) {
   Node *newNode = (Node *)malloc(sizeof(Node));
   if (newNode == NULL) {
@@ -26,7 +24,6 @@ void insertAtHead(Node **head, int data) {
   *head = newNode;
 }
 
-// Function to delete a node from the list
 void deleteNode(Node **head, int key) {
   Node *temp = *head, *prev = NULL;
 
@@ -52,7 +49,6 @@ void deleteNode(Node **head, int key) {
   free(temp);
 }
 
-// Function to search for a node in the list
 Node *searchNode(Node *head, int key) {
   Node *current = head;
   while (current != NULL) {
@@ -63,7 +59,6 @@ Node *searchNode(Node *head, int key) {
   return NULL; // Not found
 }
 
-// Function to print the linked list
 void printList(Node *node) {
   while (node != NULL) {
     printf("%d ", node->data);
@@ -72,7 +67,6 @@ void printList(Node *node) {
   printf("\n");
 }
 
-// Main function
 int main() {
   Node *head = NULL;
 
